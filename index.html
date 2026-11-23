@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mealheiro — Minhas metas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteudo">
+      <h1><img src="img/mealheiro-logo.png" alt="Mealheiro" class="logo"></h1>
+      <p class="slogan">Seu cofrinho de metas · Minhas metas</p>
+    </div>
+  </header>
+
+  <main class="largo">
+    <!-- Os cartões das metas são criados pelo js/inicio.js -->
+    <section id="lista-metas" aria-label="Lista de metas"></section>
+
+    <a href="nova-meta.html" class="botao nova-meta">+ Nova meta</a>
+
+    <div class="rodape">
+      <button type="button" id="restaurar" class="botao-secundario">Restaurar dados de exemplo</button>
+    </div>
+  </main>
+
+  <script src="js/dados.js"></script>
+  <script src="js/calculos.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>
