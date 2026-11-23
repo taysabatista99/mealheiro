@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mealheiro — Detalhe da meta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteudo">
+      <a href="index.html" class="voltar">← Minhas metas</a>
+      <h1 id="nome-meta" style="margin-top:4px">Meta</h1>
+      <p id="resumo-meta"></p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Progresso, selo e valor mensal (US03, US05) -->
+    <section class="cartao">
+      <div class="linha">
+        <span class="percentual" id="percentual">0%</span>
+        <span class="selo" id="selo"></span>
+      </div>
+      <div class="barra"><span id="barra"></span></div>
+      <div class="linha pequeno" style="margin-top:6px">
+        <span id="rotulo-mensal">Guardar por mês</span>
+        <span class="valor-mensal" id="valor-mensal"></span>
+      </div>
+    </section>
+
+    <!-- Alerta de atraso ou mensagem de incentivo (US06) -->
+    <section class="cartao" id="aviso" role="status"></section>
+
+    <!-- Registrar depósito (US04) -->
+    <section class="cartao" id="bloco-deposito">
+      <h2 class="titulo-cartao">Registrar depósito</h2>
+      <form id="form-deposito" novalidate>
+        <div class="campos-deposito">
+          <input type="number" id="valor-deposito" min="0.01" step="0.01" placeholder="Valor (R$)" aria-label="Valor do depósito">
+          <input type="date" id="data-deposito" aria-label="Data do depósito">
+        </div>
+        <p class="erro" id="erro-deposito"></p>
+        <button type="submit" class="botao" style="padding:11px">Depositar</button>
+      </form>
+    </section>
+
+    <!-- Previsão (US09) -->
+    <section class="cartao" id="bloco-previsao" hidden>
+      <h2 class="titulo-cartao">Previsão</h2>
+      <p class="pequeno" id="texto-previsao"></p>
+    </section>
+
+    <!-- Gráfico (US10) -->
+    <section class="cartao" id="bloco-grafico" hidden>
+      <h2 class="titulo-cartao">Evolução</h2>
+      <canvas id="grafico" height="200" aria-label="Gráfico da evolução dos depósitos"></canvas>
+    </section>
+
+    <!-- Histórico (US07) -->
+    <section class="cartao">
+      <h2 class="titulo-cartao">Histórico de depósitos</h2>
+      <ul class="historico" id="historico"></ul>
+    </section>
+
+    <!-- Editar e excluir (US08) -->
+    <div class="acoes-meta">
+      <a class="botao-secundario" id="editar">Editar meta</a>
+      <button type="button" class="botao-secundario botao-perigo" id="excluir">Excluir meta</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/calculos.js"></script>
+  <script src="js/detalhe.js"></script>
+</body>
+</html>

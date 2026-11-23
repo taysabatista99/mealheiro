@@ -1,0 +1,139 @@
+/* =============================================================
+   Mealheiro — estilos
+   Mobile primeiro; no computador o conteúdo fica centralizado
+   e a lista de metas vira grade de 2 colunas.
+   ============================================================= */
+:root {
+  --marrom: #8A534C;        /* cor do logo: textos de destaque e botões */
+  --marrom-escuro: #6E3F39;
+  --rosado: #FBE9E9;        /* fundo do logo: topo e caixas de destaque */
+  --rosa-porquinho: #F9D3CA;
+  --verde: #1E6B41;         /* só para o status "No ritmo" */
+  --verde-claro: #E3F4EA;
+  --amarelo: #E0A800;
+  --vermelho: #C62828;
+  --vermelho-claro: #FDECEC;
+  --dourado: #8A5A0B;       /* moeda do logo: status "Concluída" */
+  --fundo: #FAF6F5;
+  --texto: #1F2A37;
+  --texto-suave: #4B5563;
+  --cinza: #6B7280;
+  --borda: #D1D5DB;
+  --raio: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  background: var(--rosado);
+  color: var(--marrom);
+  border-bottom: 1px solid #F1D6D3;
+  padding: 22px 20px 18px;
+}
+.topo .conteudo { max-width: 860px; margin: 0 auto; }
+.topo h1 { font-size: 22px; font-weight: 700; }
+.topo p { font-size: 13px; margin-top: 3px; }
+.topo a.voltar { color: var(--marrom); text-decoration: none; font-size: 13px; }
+.topo a.voltar:hover { text-decoration: underline; }
+
+/* Logo na tela inicial */
+.logo { display: block; height: 52px; width: auto; }
+.topo .slogan { margin-top: 4px; }
+
+/* ---------- Área principal ---------- */
+main { max-width: 520px; margin: 0 auto; padding: 16px; }
+main.largo { max-width: 860px; }
+
+.cartao {
+  background: #fff;
+  border-radius: var(--raio);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+}
+a.cartao { display: block; color: inherit; text-decoration: none; transition: transform .15s; }
+a.cartao:hover, a.cartao:focus { transform: translateY(-2px); outline: 2px solid var(--marrom); }
+
+.linha { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.nome-meta { font-weight: 600; font-size: 15px; }
+.detalhe { font-size: 12px; color: var(--cinza); }
+.pequeno { font-size: 13px; color: var(--texto-suave); }
+
+/* ---------- Selos de status ---------- */
+.selo { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+.selo.no-ritmo { background: var(--verde-claro); color: var(--verde); }
+.selo.atrasada { background: #FDE2E1; color: var(--vermelho); }
+.selo.concluida { background: #FCEFD9; color: var(--dourado); }
+
+/* ---------- Barra de progresso ---------- */
+.barra { height: 10px; background: #E5E7EB; border-radius: 10px; margin: 10px 0 6px; overflow: hidden; }
+.barra span { display: block; height: 100%; border-radius: 10px; background: var(--verde); }
+.barra span.atrasada { background: var(--amarelo); }
+.barra span.concluida { background: var(--dourado); }
+
+/* ---------- Botões ---------- */
+.botao {
+  display: block; width: 100%;
+  background: var(--marrom); color: #fff;
+  border: none; border-radius: 12px;
+  padding: 13px; font: 600 15px "Inter", Arial, sans-serif;
+  text-align: center; text-decoration: none; cursor: pointer;
+}
+.botao:hover { background: var(--marrom-escuro); }
+.botao-secundario {
+  display: block; width: 100%; background: none; border: none;
+  color: var(--texto-suave); font: 600 14px "Inter", Arial, sans-serif;
+  padding: 10px; text-align: center; text-decoration: none; cursor: pointer;
+}
+.botao-secundario:hover { color: var(--texto); text-decoration: underline; }
+.botao-perigo { color: var(--vermelho); }
+.acoes-meta { display: flex; gap: 8px; }
+.acoes-meta > * { flex: 1; }
+
+/* ---------- Formulários ---------- */
+label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+input, select {
+  width: 100%; padding: 11px 12px;
+  font: 15px "Inter", Arial, sans-serif; color: var(--texto);
+  background: #fff; border: 1.5px solid var(--borda); border-radius: 10px;
+}
+input:focus, select:focus { outline: none; border-color: var(--marrom); }
+input.invalido { border-color: var(--vermelho); }
+.erro { color: var(--vermelho); font-size: 12px; margin-top: 4px; min-height: 14px; }
+
+.destaque { background: var(--rosado); box-shadow: none; margin-top: 18px; }
+.destaque strong { display: block; font-size: 22px; color: var(--marrom); margin: 2px 0; }
+
+/* ---------- Detalhe da meta ---------- */
+.percentual { font-size: 28px; font-weight: 700; }
+.valor-mensal { color: var(--marrom); font-size: 16px; font-weight: 700; }
+.alerta { background: var(--vermelho-claro); border-left: 4px solid var(--vermelho); box-shadow: none; color: #7F1D1D; font-size: 13px; line-height: 1.45; }
+.aviso-ok { background: var(--verde-claro); border-left: 4px solid var(--verde); box-shadow: none; color: #064E3B; font-size: 13px; line-height: 1.45; }
+.titulo-cartao { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+.campos-deposito { display: flex; gap: 8px; }
+.campos-deposito input { flex: 1; min-width: 0; }
+
+.historico { list-style: none; }
+.historico li { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #EEE; font-size: 13px; }
+.historico li:last-child { border-bottom: none; }
+.historico button { background: none; border: none; color: var(--cinza); font-size: 18px; cursor: pointer; margin-left: 10px; line-height: 1; }
+.historico button:hover { color: var(--vermelho); }
+.vazio { text-align: center; color: var(--cinza); font-size: 14px; padding: 24px 0; }
+
+.rodape { text-align: center; margin: 24px 0 8px; }
+
+/* ---------- Computador ---------- */
+@media (min-width: 900px) {
+  #lista-metas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  #lista-metas .cartao { margin-bottom: 0; }
+  #lista-metas .vazio { grid-column: 1 / -1; }
+  .botao.nova-meta { max-width: 320px; margin: 24px auto 0; }
+}
